@@ -2,15 +2,15 @@
 #CIS261
 #Course Project Phase 1: Create and Call Functions with Parameters
 
-#This is the function for payroll
+# This is the function to calculate payroll
 def calculate_payroll(hours_worked, hourly_rate, income_tax_rate_percent):
-    income_tax_rate = income_tax_rate_percent / 100  # Convert percentage to decimal
     gross_pay = hours_worked * hourly_rate
+    income_tax_rate = income_tax_rate_percent / 100  # Convert percentage to decimal
     income_taxes = gross_pay * income_tax_rate
     net_pay = gross_pay - income_taxes
     return gross_pay, income_taxes, net_pay
 
-# This function displays each employee's payroll information
+# This is the function to display individual employee payroll information
 def display_employee_data(employee_name, hours_worked, hourly_rate, income_tax_rate_percent, gross_pay, income_taxes, net_pay):
     print(f"\nEmployee: {employee_name}")
     print(f"Hours Worked: {hours_worked}")
@@ -20,7 +20,7 @@ def display_employee_data(employee_name, hours_worked, hourly_rate, income_tax_r
     print(f"Income Taxes: ${income_taxes:.2f}")
     print(f"Net Pay: ${net_pay:.2f}")
 
-# This is the main loop for user input
+# This is the main loop processing end totals
 def main():
     total_employees = 0
     total_hours_worked = 0
@@ -36,38 +36,29 @@ def main():
         try:
             hours_worked = float(input(f"Enter hours worked for {employee_name}: "))
             hourly_rate = float(input(f"Enter hourly rate for {employee_name}: "))
+            income_tax_rate_percent = float(input(f"Enter income tax rate (as a percentage) for {employee_name}: "))
 
-            # Adding input validation for income_tax_rate_percent
-            while True:
-                try:
-                    income_tax_rate_percent = float(input(f"Enter income tax rate (as a percentage) for {employee_name}: "))
-                    break  # Exit loop if input is valid
-                except ValueError:
-                    print("Invalid input. Please enter a valid number for the income tax rate.")
-
-            # Calculates payroll
             gross_pay, income_taxes, net_pay = calculate_payroll(hours_worked, hourly_rate, income_tax_rate_percent)
 
-            # Displays individual data
             display_employee_data(employee_name, hours_worked, hourly_rate, income_tax_rate_percent, gross_pay, income_taxes, net_pay)
 
-            # Updates totals
+            # Update totals
             total_employees += 1
             total_hours_worked += hours_worked
             total_gross_pay += gross_pay
             total_income_taxes += income_taxes
-            total_net_pay += net_pay    
+            total_net_pay += net_pay
 
         except ValueError:
-            print("Invalid input. Please enter valid numbers for hours worked, hourly rate, and tax rate.")
+            print("Invalid input. Please enter numbers for hours worked, hourly rate, and tax rate.")
 
-    # This displays totals for all employees at user 'end'
+    # Display totals for all employees
     if total_employees > 0:
         print("\nSummary of all employees:")
         print(f"Total number of employees: {total_employees}")
-        print(f"Total hours worked: {total_hours_worked:.2f}")
+        print(f"Total hours worked: {total_hours_worked}")
         print(f"Total gross pay: ${total_gross_pay:.2f}")
-        print(f"Total income taxes: ${total_income_taxes:.2f}")
+        print(f"Total income Taxes: ${total_income_taxes:.2f}")
         print(f"Total net pay: ${total_net_pay:.2f}")
     else:
         print("No employees were entered.")
