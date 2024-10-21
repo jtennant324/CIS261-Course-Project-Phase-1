@@ -13,12 +13,12 @@ def calculate_payroll(hours_worked, hourly_rate, income_tax_rate_percent):
 # This is the function to display individual employee payroll information
 def display_employee_data(employee_name, hours_worked, hourly_rate, income_tax_rate_percent, gross_pay, income_taxes, net_pay):
     print(f"\nEmployee: {employee_name}")
-    print(f"Hours Worked: {hours_worked}")
+    print(f"Hours Worked: {hours_worked:.2f}")
     print(f"Hourly Rate: ${hourly_rate:.2f}")
     print(f"Gross Pay: ${gross_pay:.2f}")
     print(f"Income Tax Rate: {income_tax_rate_percent:.2f}%")
     print(f"Income Taxes: ${income_taxes:.2f}")
-    print(f"Net Pay: ${net_pay:.2f}")
+    print(f"Net Pay: ${net_pay:.2f}\n")
 
 # This is the main loop processing end totals
 def main():
@@ -29,7 +29,7 @@ def main():
     total_net_pay = 0
 
     while True:
-        employee_name = input("\nEnter employee's name (or type 'End' to finish): ")
+        employee_name = input("Enter employee's name (or type 'End' to finish): ")
         if employee_name.lower() == 'end':
             break
 
@@ -56,7 +56,7 @@ def main():
     if total_employees > 0:
         print("\nSummary of all employees:")
         print(f"Total number of employees: {total_employees}")
-        print(f"Total hours worked: {total_hours_worked}")
+        print(f"Total hours worked: {total_hours_worked:.2f}")
         print(f"Total gross pay: ${total_gross_pay:.2f}")
         print(f"Total income Taxes: ${total_income_taxes:.2f}")
         print(f"Total net pay: ${total_net_pay:.2f}")
