@@ -63,6 +63,6 @@ def main():
     else:
         print("No employees were entered.")
 
-# Run the program
+# Run program
 if __name__ == "__main__":
     main()
