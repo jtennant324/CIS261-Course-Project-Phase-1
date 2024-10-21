@@ -29,7 +29,7 @@ def main():
     total_net_pay = 0
 
     while True:
-        employee_name = input("Enter employee's name (or type 'End' to finish): ")
+        employee_name = input("\nEnter employee's name (or type 'End' to finish): ")
         if employee_name.lower() == 'end':
             break
 
