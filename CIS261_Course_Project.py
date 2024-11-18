@@ -2,6 +2,8 @@
 #CIS261
 #Course Project Phase 3: Using Files to Store and Retrieve Data from datetime import datetime
 
+from datetime import datetime
+
 # Function to input and validate the from date and to date for the hours worked
 def input_dates():
     while True:
