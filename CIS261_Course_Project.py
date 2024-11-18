@@ -118,7 +118,7 @@ def generate_report(file_name):
 
 # Function to display summary totals from a dictionary object
 def display_totals(totals):
-    print("\nSummary of All Employees:")
+    print("\nTotals:")
     print(f"Total Employees: {totals['total_employees']}")
     print(f"Total Hours Worked: {totals['total_hours_worked']:.2f}")
     print(f"Total Gross Pay: ${totals['total_gross_pay']:.2f}")
@@ -137,7 +137,7 @@ def add_employee_data(file_name):
 def main():
     file_name = "employee_data.txt"
     while True:
-        print("Select an option:")
+        print("\nSelect an option:")
         print("1 - Add Employee Data")
         print("2 - Display Records")
         print("3 - Exit")
