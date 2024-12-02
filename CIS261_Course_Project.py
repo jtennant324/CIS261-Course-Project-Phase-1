@@ -236,7 +236,7 @@ def login_process(user_file, payroll_file):
 # Main program flow
 def main():
     user_file = "user_data.txt"
-    payroll_file = "payroll_data.txt"
+    payroll_file = "employee_data.txt"
 
     add_users(user_file)
     display_users(user_file)
